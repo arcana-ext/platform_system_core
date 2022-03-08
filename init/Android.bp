@@ -117,6 +117,7 @@ cc_defaults {
         "-DDUMP_ON_UMOUNT_FAILURE=0",
         "-DSHUTDOWN_ZERO_TIMEOUT=0",
         "-DINIT_FULL_SOURCES",
+        "-DINSTALL_DEBUG_POLICY_TO_SYSTEM_EXT=0",
     ],
     product_variables: {
         debuggable: {
@@ -143,6 +144,14 @@ cc_defaults {
         },
         uml: {
             cppflags: ["-DUSER_MODE_LINUX"],
+        },
+    },
+    soong_config_variables: {
+        PRODUCT_INSTALL_DEBUG_POLICY_TO_SYSTEM_EXT: {
+            cflags: [
+                "-UINSTALL_DEBUG_POLICY_TO_SYSTEM_EXT",
+                "-DINSTALL_DEBUG_POLICY_TO_SYSTEM_EXT=1",
+            ],
         },
     },
     static_libs: [
