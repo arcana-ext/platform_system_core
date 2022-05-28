@@ -226,7 +226,7 @@ on init
     write /dev/blkio/blkio.weight 1000
     write /dev/blkio/background/blkio.weight 200
     write /dev/blkio/background/blkio.bfq.weight 10
-    write /dev/blkio/blkio.group_idle 0
+    write /dev/blkio/blkio.group_idle 2000
     write /dev/blkio/background/blkio.group_idle 0
 
     restorecon_recursive /mnt
